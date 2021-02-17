@@ -10,6 +10,26 @@
   </head>
 
   <body>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <i class="fas fa-utensils" id="brand-icon"></i>
+  <h3>GETCHU SUM</h3>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'View Restaurants', restaurants_path, class: 'btn btn-flat' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Add New Restaurant', new_restaurant_path, class: 'btn btn-flat' %>
+      </li>
+    </ul>
+  </div>
+</div>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,24 @@
+<div class="restaurant-info">
+  <h3 class="restaurant-address"><%= @restaurant.address %></h3>
+  <h1 class="restaurant-name"><%= @restaurant.name %></h1>
+  <h2 class="restaurant-category"><%= @restaurant.category %></h2>
+  <h2 class="restaurant-number">Tel: <%=@restaurant.phone_number%></h2>
+  <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant), class: 'btn btn-flat' %>
+</div>
+
+
+<% #show reviews %>
+<div class="container-review">
+  <h2 class="review">Wot people thunk</h2>
+  <% @restaurant.reviews.each do |review| %>
+    <div class="review">
+      <h3><%= review.content %></h3>
+      <div class="stars d-flex">
+          <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>
+

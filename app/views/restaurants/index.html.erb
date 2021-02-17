@@ -1,0 +1,17 @@
+<div class="container-restaurants">
+  <% @restaurants.each do |restaurant| %>
+    
+    <div class="container-restaurant">
+      <%= link_to restaurant_path(restaurant) do %>
+        <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= restaurant.name %></h2>
+          <p><%= restaurant.category %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

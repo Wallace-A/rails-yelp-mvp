@@ -1,0 +1,26 @@
+<h1>ADDING restaurant</h1>
+<% if @restaurant.errors.any? %>
+    <% @restaurant.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+<%= simple_form_for @restaurant do |t| %>
+  <div class="form-group">
+    <%= t.label :name %>
+    <%= t.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= t.label :category %>
+    <%= t.text_field :category %>
+  </div>
+  <div class="form-group">
+    <%= t.label :phone_number %>
+    <%= t.text_field :phone_number %>
+  </div>
+  <div class="form-group">
+    <%= t.label :address %>
+    <%= t.text_field :address %>
+  </div>
+  <%= t.submit class: 'btn btn-primary' %>
+<% end %>
+<%= link_to 'Back', restaurants_path, class: 'btn btn-light' %>
